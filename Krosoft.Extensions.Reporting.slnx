@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Krosoft.Extensions.Reporting.Csv/Krosoft.Extensions.Reporting.Csv.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Krosoft.Extensions.Reporting.Csv.Tests/Krosoft.Extensions.Reporting.Csv.Tests.csproj" />
+  </Folder>
+</Solution>
