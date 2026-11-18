@@ -29,8 +29,8 @@ public class CsvReaderTests : BaseTest
         var lignes = _csvReadService.GetRecordsFromBase64<PrixCsvDto>(Convert.ToBase64String(Encoding.UTF8.GetBytes(csvFile)), Encoding.UTF8, new CultureInfo("FR-fr")).ToList();
 
         Check.That(lignes.First().FournisseurNom).Equals("Bon Pied Bon Œil équipé");
-        Check.That(lignes.ElementAt(2).Prix).Equals(96.99);
-        Check.That(lignes.First().Prix).Equals(10.5);
+        Check.That(lignes.ElementAt(2).Prix).IsEqualTo(96.99m);
+        Check.That(lignes.First().Prix).IsEqualTo(10.5m);
     }
 
     [TestMethod]
@@ -39,8 +39,8 @@ public class CsvReaderTests : BaseTest
         var lignes = _csvReadService.GetRecordsFromPath<PrixCsvDto>("Files/test-fr.csv", Encoding.UTF8, new CultureInfo("FR-fr")).ToList();
 
         Check.That(lignes.First().FournisseurNom).Equals("Bon Pied Bon Œil équipé");
-        Check.That(lignes.ElementAt(2).Prix).Equals(96.99);
-        Check.That(lignes.First().Prix).Equals(10.5);
+        Check.That(lignes.ElementAt(2).Prix).IsEqualTo(96.99m);
+        Check.That(lignes.First().Prix).IsEqualTo(10.5m);
     }
 
     [TestMethod]
@@ -74,8 +74,8 @@ public class CsvReaderTests : BaseTest
         var lignes = _csvReadService.GetRecordsFromBase64<PrixCsvDto>(Convert.ToBase64String(Encoding.UTF8.GetBytes(csvFile)), Encoding.UTF8, new CultureInfo("EN-us")).ToList();
 
         Check.That(lignes.First().FournisseurNom).Equals("Bon Pied Bon Œil équipé");
-        Check.That(lignes.ElementAt(2).Prix).Equals(9699);
-        Check.That(lignes.First().Prix).Equals(10.5);
+        Check.That(lignes.ElementAt(2).Prix).IsEqualTo(9699m);
+        Check.That(lignes.First().Prix).IsEqualTo(10.5m);
     }
 
     [TestMethod]
@@ -100,8 +100,8 @@ public class CsvReaderTests : BaseTest
     {
         var lignes = _csvReadService.GetRecordsFromPath<PrixCsvDto>("Files/test-us.csv", Encoding.UTF8, new CultureInfo("EN-us")).ToList();
         Check.That(lignes.First().FournisseurNom).Equals("Bon Pied Bon Œil équipé");
-        Check.That(lignes.ElementAt(2).Prix).Equals(9699);
-        Check.That(lignes.First().Prix).Equals(10.5);
+        Check.That(lignes.ElementAt(2).Prix).IsEqualTo(9699m);
+        Check.That(lignes.First().Prix).IsEqualTo(10.5m);
     }
 
     [TestInitialize]
